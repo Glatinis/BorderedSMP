@@ -2,7 +2,6 @@
 
 ![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk&logoColor=white)
 ![Paper](https://img.shields.io/badge/Paper-1.26.2-blue?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMyAyLjA1djIuMDJjMy45NS41NCA3IDMuOTkgNyA4LjQ4YzAgMy42MS0yLjAxIDYuNzMtNS4wMyA4LjE3TDEzIDE4LjdWMjNsOC04LTgtOHY0LjA2YzIuOTctMS40OSA1LTQuNSA1LTcuOTljMC00Ljk5LTQtOC45My05LTguOTJ6bS0yIDBDNi4wNSAyLjA1IDIgNiAyIDExYzAgMy41IDIuMDMgNi41IDUgOC4wNlY0LjkzQzQuMDMgNi40NiAyIDguNzIgMiAxMWMwIDMuMyAyLjM3IDYuMDYgNS41NiA2Ljc5TDkgMjNsLTcuNS04LjVMMiAxM3YtMWMwLTQuNDkgMy4wNi03LjkzIDctOC40OHoiLz48L3N2Zz4=&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
 ![Build](https://img.shields.io/badge/Build-Gradle-02303A?logo=gradle&logoColor=white)
 
 A hardcore SMP plugin that raises the stakes on every death. Lives are finite, the world border shrinks, and revival requires crafting — not commands.
@@ -119,8 +118,3 @@ To run a local test server:
 ./gradlew runServer
 ```
 
----
-
-## License
-
-MIT © [Glatinis](https://github.com/Glatinis)

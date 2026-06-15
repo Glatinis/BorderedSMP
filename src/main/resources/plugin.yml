@@ -13,3 +13,7 @@ commands:
     description: Manage player lives
     permission: borderedsmp.admin
     usage: /lives <set|add|remove|check> <player> [amount]
+  border:
+    description: Manage world border settings
+    permission: borderedsmp.admin
+    usage: /border setrange <min> <max>

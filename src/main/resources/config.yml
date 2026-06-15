@@ -1,0 +1,7 @@
+border:
+  enabled: true
+  range:
+    min: 1
+    max: 10
+  sound:
+    volume: 1.0

@@ -1,0 +1,9 @@
+name: BorderedSMP
+description: $description
+version: '${version}'
+
+main: com.github.Glatinis.borderedSMP.BorderedSMP
+api-version: '26.1.2'
+load: POSTWORLD
+
+authors: [ Glatinis ]

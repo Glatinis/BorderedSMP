@@ -5,3 +5,17 @@ border:
     max: 10
   sound:
     volume: 1.0
+
+revive:
+  enabled: true
+  lives-to-restore: 3
+  recipe:
+    result-material: TOTEM_OF_UNDYING
+    shape:
+      - "DGD"
+      - "GEG"
+      - "DGD"
+    ingredients:
+      D: DIAMOND
+      G: GOLD_INGOT
+      E: EMERALD

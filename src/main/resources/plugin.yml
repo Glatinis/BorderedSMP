@@ -17,3 +17,7 @@ commands:
     description: Manage world border settings
     permission: borderedsmp.admin
     usage: /border setrange <min> <max>
+  revive:
+    description: Manage the revive system
+    permission: borderedsmp.admin
+    usage: /revive <toggle|reload>

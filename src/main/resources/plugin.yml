@@ -7,3 +7,9 @@ api-version: '26.1.2'
 load: POSTWORLD
 
 authors: [ Glatinis ]
+
+commands:
+  lives:
+    description: Manage player lives
+    permission: borderedsmp.admin
+    usage: /lives <set|add|remove|check> <player> [amount]

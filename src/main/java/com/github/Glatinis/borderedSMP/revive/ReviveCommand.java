@@ -1,12 +1,18 @@
 package com.github.Glatinis.borderedSMP.revive;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 
-public class ReviveCommand implements CommandExecutor {
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
-    private static final String USAGE = "Usage: /revive <toggle|reload>";
+public class ReviveCommand implements CommandExecutor, TabCompleter {
+
+    private static final String USAGE = ChatColor.YELLOW + "Usage: /revive <toggle|reload>";
 
     private final ReviveConfig config;
     private final ReviveManager manager;
@@ -19,7 +25,7 @@ public class ReviveCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!sender.hasPermission("borderedsmp.admin")) {
-            sender.sendMessage("You don't have permission to use this command.");
+            sender.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
             return true;
         }
 
@@ -32,15 +38,30 @@ public class ReviveCommand implements CommandExecutor {
             case "toggle" -> {
                 boolean newState = !config.isEnabled();
                 config.setEnabled(newState);
-                sender.sendMessage("Revive system " + (newState ? "enabled" : "disabled") + ".");
+                String stateStr = newState ? (ChatColor.GREEN + "enabled") : (ChatColor.RED + "disabled");
+                sender.sendMessage(ChatColor.GOLD + "Revive system " + stateStr + ChatColor.GOLD + ".");
             }
             case "reload" -> {
                 manager.reloadRecipe();
-                sender.sendMessage("Revive recipe reloaded from config.");
+                sender.sendMessage(ChatColor.GREEN + "Revive recipe reloaded from config.");
             }
             default -> sender.sendMessage(USAGE);
         }
 
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        if (!sender.hasPermission("borderedsmp.admin")) return List.of();
+
+        if (args.length == 1) {
+            String partial = args[0].toLowerCase();
+            return Arrays.asList("toggle", "reload").stream()
+                    .filter(s -> s.startsWith(partial))
+                    .collect(Collectors.toList());
+        }
+
+        return List.of();
     }
 }

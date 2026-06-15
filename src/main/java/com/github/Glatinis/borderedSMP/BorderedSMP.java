@@ -23,19 +23,25 @@ public final class BorderedSMP extends JavaPlugin {
 
         LifeManager lifeManager = new LifeManager(this, repo);
         getServer().getPluginManager().registerEvents(new LifeListener(lifeManager), this);
-        getCommand("lives").setExecutor(new LifeCommand(lifeManager));
+        var lifeCmd = new LifeCommand(lifeManager);
+        getCommand("lives").setExecutor(lifeCmd);
+        getCommand("lives").setTabCompleter(lifeCmd);
 
         saveDefaultConfig();
         BorderConfig borderConfig = new BorderConfig(this);
         BorderManager borderManager = new BorderManager(borderConfig);
         getServer().getPluginManager().registerEvents(new BorderListener(borderManager), this);
-        getCommand("border").setExecutor(new BorderCommand(borderConfig));
+        var borderCmd = new BorderCommand(borderConfig);
+        getCommand("border").setExecutor(borderCmd);
+        getCommand("border").setTabCompleter(borderCmd);
 
         ReviveConfig reviveConfig = new ReviveConfig(this);
         ReviveManager reviveManager = new ReviveManager(this, reviveConfig, lifeManager);
         reviveManager.registerRecipe();
         getServer().getPluginManager().registerEvents(new ReviveListener(this, reviveManager), this);
-        getCommand("revive").setExecutor(new ReviveCommand(reviveConfig, reviveManager));
+        var reviveCmd = new ReviveCommand(reviveConfig, reviveManager);
+        getCommand("revive").setExecutor(reviveCmd);
+        getCommand("revive").setTabCompleter(reviveCmd);
 
         getLogger().info("Loaded plugin.");
     }

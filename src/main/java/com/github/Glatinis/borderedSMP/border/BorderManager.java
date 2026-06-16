@@ -22,7 +22,7 @@ public class BorderManager {
                 config.getRangeMin(), config.getRangeMax() + 1);
 
         WorldBorder border = world.getWorldBorder();
-        border.setSize(border.getSize() - delta);
+        border.setSize(border.getSize() + delta);
 
         float volume = config.getSoundVolume();
         Bukkit.getOnlinePlayers().forEach(p ->
